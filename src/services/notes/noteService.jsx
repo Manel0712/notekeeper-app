@@ -28,7 +28,15 @@ const noteDelete = (id) => {
   return request;
 };
 
-const noteEdit = (id, name, description, important, status, due_date, create_at) => {
+const noteEdit = (
+  id,
+  name,
+  description,
+  important,
+  status,
+  due_date,
+  create_at,
+) => {
   const data = {
     name: name,
     description: description,
