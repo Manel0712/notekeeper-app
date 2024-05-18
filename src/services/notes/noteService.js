@@ -1,3 +1,5 @@
+import { describe } from "vitest";
+
 const baseUrl = `${import.meta.env.VITE_ENPOINT}`;
 const getAll = () => {
   const request = fetch(baseUrl).then((response) => {
@@ -12,7 +14,15 @@ const create = (newObject) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(newObject),
+    body: JSON.stringify({
+      id: newObject.id ? newObject.id.toString() : Date.now().toString(),
+      name: newObject.name,
+      description: newObject.description,
+      important: newObject.important,
+      status: newObject.status,
+      due_date: newObject.due_date,
+      created_at: newObject.created_at
+    }),
   }).then((response) => {
     return response.json();
   });
@@ -35,7 +45,7 @@ const noteEdit = (
   important,
   status,
   due_date,
-  create_at,
+  created_at,
 ) => {
   const data = {
     name: name,
@@ -43,7 +53,7 @@ const noteEdit = (
     important: important,
     status: status,
     due_date: due_date,
-    create_at: create_at,
+    created_at: created_at,
   };
   const request = fetch(`${baseUrl}/${id}`, {
     method: "PUT",
