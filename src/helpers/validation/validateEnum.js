@@ -1,5 +1,5 @@
 export const validateEnum = (note) => {
-  if (note === "Pending" || note === "In Progress" || note === "Done") {
+  if (note === "pending" || note === "in progress" || note === "done") {
     return true;
   }
   return false;
