@@ -1,6 +1,5 @@
 export const validateType = (note) => {
   if (
-    typeof note.id === "string" &&
     typeof note.name === "string" &&
     typeof note.description === "string" &&
     typeof note.important === "boolean" &&

@@ -1,7 +1,5 @@
 export const validateNonEmpty = (note) => {
   if (
-    note.id !== "" &&
-    note.id.trim().length > 0 &&
     note.name !== "" &&
     note.name.trim().length > 0 &&
     note.description !== "" &&

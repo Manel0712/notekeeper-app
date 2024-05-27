@@ -1,5 +1,3 @@
-import { describe } from "vitest";
-
 const baseUrl = `${import.meta.env.VITE_ENPOINT}`;
 const getAll = () => {
   const request = fetch(baseUrl).then((response) => {
@@ -15,7 +13,6 @@ const create = (newObject) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      id: newObject.id ? newObject.id.toString() : Date.now().toString(),
       name: newObject.name,
       description: newObject.description,
       important: newObject.important,

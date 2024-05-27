@@ -4,7 +4,6 @@ describe("When the function is called with a value of type array", () => {
   test("Then an boolean should be returned.", () => {
     const value =
       {
-        id: "kxoBP-1715420815977",
         name: "Walk the dog",
         description: "Go to the park",
         important: false,

@@ -6,7 +6,7 @@ export const DeleteNoteButton = ({ noteId, noteName, setNote }) => {
         if (confirm(`Are you sure about deleting ${noteName} ?`)) {
             noteService.noteDelete(noteId).then((data) => {
               noteService.getAll().then((notes) => {
-                setNote(notes);
+                setNote(notes.notes);
               });
             });
         }
