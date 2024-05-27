@@ -31,7 +31,7 @@ export const UpdateNoteButton = ({
           noteImportant={noteImportant}
           noteStatus={noteStatus}
           noteDue_Date={noteDue_Date}
-          visibilityUpdateForm = {setVisibilityUpdateForm}
+          visibilityUpdateForm={setVisibilityUpdateForm}
         />
       ) : (
         ""
