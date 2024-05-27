@@ -10,8 +10,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "lint2": "prettier . --check",
-    "lint2:fix": "prettier . --write"
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write"
   },
   "babel": {
     "env": {

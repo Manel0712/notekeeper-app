@@ -4,7 +4,7 @@ export const DeleteNoteButton = ({ noteId, noteName, setNote }) => {
 
     const handleAlertDelete = () => {
         if (confirm(`Are you sure about deleting ${noteName} ?`)) {
-            noteService.noteDelete(noteId).then((data) => {
+            noteService.noteDelete(noteId).then(() => {
               noteService.getAll().then((notes) => {
                 setNote(notes.notes);
               });
