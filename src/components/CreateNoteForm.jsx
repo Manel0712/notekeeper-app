@@ -36,27 +36,58 @@ export const CreateNoteForm = ({
     }
   };
   return (
-    <div>
+    <div className="container">
       <h2>Add a New Note:</h2>
       <form onSubmit={addNewNote}>
-        <div>
-          <label htmlFor="new-Name">Name: </label>
-          <input id="new-Name" value={newName} onChange={setNewName} />
-          <label htmlFor="new-Description">Description: </label>
+        <div className="form-group">
+          <label htmlFor="new-Name">Name:</label>
+          <input
+            id="new-Name"
+            value={newName}
+            onChange={setNewName}
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="new-Description">Description:</label>
           <input
             id="new-Description"
             value={newDescription}
             onChange={setDescription}
+            className="form-control"
           />
-          <label htmlFor="new-Important">Important: </label>
-          <input id="new-Important" value={newImportant} onChange={setImportant} />
-          <label htmlFor="new-Status">status: </label>
-          <input id="new-Status" value={newStatus} onChange={setStatus} />
-          <label htmlFor="new-Due_Date">due_date: </label>
-          <input id="new-Due_Date" value={newDue_Date} onChange={setDue_Date} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="new-Important">Important:</label>
+          <input
+            id="new-Important"
+            value={newImportant}
+            onChange={setImportant}
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="new-Status">Status:</label>
+          <input
+            id="new-Status"
+            value={newStatus}
+            onChange={setStatus}
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="new-Due_Date">Due Date:</label>
+          <input
+            id="new-Due_Date"
+            value={newDue_Date}
+            onChange={setDue_Date}
+            className="form-control"
+          />
         </div>
         <div>
-          <button type="submit">add</button>
+          <button type="submit" className="button">
+            Add
+          </button>
         </div>
       </form>
     </div>

@@ -3,7 +3,7 @@ import { validateNonEmpty } from "../helpers/validation/validateNonEmpty";
 import { validateType } from "../helpers/validation/validateType";
 import noteService from "../services/notes/noteService";
 import { useUpdateForm } from "../hooks";
-import "../index.css"
+import "../index.css";
 export const UpdateNoteForm = ({
   id,
   note,
@@ -59,7 +59,7 @@ export const UpdateNoteForm = ({
         .then((data) => {
           setNote([...note, data]);
         })
-        .finally(()=>{
+        .finally(() => {
           visibilityUpdateForm(false);
         });
     }
