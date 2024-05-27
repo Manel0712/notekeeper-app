@@ -3,6 +3,7 @@ import { validateNonEmpty } from "../helpers/validation/validateNonEmpty";
 import { validateType } from "../helpers/validation/validateType";
 import noteService from "../services/notes/noteService";
 import { useUpdateForm } from "../hooks";
+import "../index.css"
 export const UpdateNoteForm = ({
   id,
   note,
@@ -12,7 +13,6 @@ export const UpdateNoteForm = ({
   noteImportant,
   noteStatus,
   noteDue_Date,
-  noteCreated_at,
   visibilityUpdateForm,
 }) => {
   const {
@@ -21,20 +21,17 @@ export const UpdateNoteForm = ({
     important,
     status,
     due_Date,
-    created_At,
     handleNameValue,
     handleDescriptionValue,
     handleImportantValue,
     handleStatusValue,
     handleDue_DataValue,
-    handleCreated_AtValue,
   } = useUpdateForm({
     name: noteName,
     description: noteDescription,
     important: noteImportant,
     status: noteStatus,
     due_Date: noteDue_Date,
-    created_At: noteCreated_at,
   });
   const editNote = (event) => {
     event.preventDefault();
@@ -44,7 +41,6 @@ export const UpdateNoteForm = ({
       important: Boolean(important),
       status: status,
       due_date: due_Date,
-      created_at: Number(created_At),
     };
     if (
       validateType(editNote) &&
@@ -59,7 +55,6 @@ export const UpdateNoteForm = ({
           editNote.important,
           editNote.status,
           editNote.due_date,
-          editNote.created_at
         )
         .then((data) => {
           setNote([...note, data]);
@@ -70,41 +65,58 @@ export const UpdateNoteForm = ({
     }
   };
   return (
-    <div>
+    <div className="container">
       <h2>Edit a Note:</h2>
       <form onSubmit={editNote}>
-        <div>
-          <label htmlFor="Name">Name: </label>
-          <input id="Name" value={name} onChange={handleNameValue} />
-          <label htmlFor="Description">Description: </label>
+        <div className="form-group">
+          <label htmlFor="Name">Name:</label>
+          <input
+            id="Name"
+            value={name}
+            onChange={handleNameValue}
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="Description">Description:</label>
           <input
             id="Description"
             value={description}
             onChange={handleDescriptionValue}
+            className="form-control"
           />
-          <label htmlFor="Important">Important: </label>
+        </div>
+        <div className="form-group">
+          <label htmlFor="Important">Important:</label>
           <input
             id="Important"
             value={important}
             onChange={handleImportantValue}
+            className="form-control"
           />
-          <label htmlFor="Status">status: </label>
-          <input id="Status" value={status} onChange={handleStatusValue} />
-          <label htmlFor="Due_Date">due_date: </label>
+        </div>
+        <div className="form-group">
+          <label htmlFor="Status">Status:</label>
+          <input
+            id="Status"
+            value={status}
+            onChange={handleStatusValue}
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="Due_Date">Due Date:</label>
           <input
             id="Due_Date"
             value={due_Date}
             onChange={handleDue_DataValue}
-          />
-          <label htmlFor="Created">created_at: </label>
-          <input
-            id="Created"
-            value={created_At}
-            onChange={handleCreated_AtValue}
+            className="form-control"
           />
         </div>
         <div>
-          <button type="submit">edit</button>
+          <button type="submit" className="button">
+            Edit
+          </button>
         </div>
       </form>
     </div>

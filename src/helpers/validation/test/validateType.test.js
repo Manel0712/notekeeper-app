@@ -9,7 +9,6 @@ describe("When the function is called with a value of type array", () => {
         important: false,
         status: "pending",
         due_date: "5/11/2024",
-        created_at: 1715420815988,
       }
     const result = validateType(value);
     expect(typeof result).toEqual("boolean");

@@ -23,7 +23,6 @@ export const Note = ({
         noteImportant={noteInformation.important}
         noteStatus={noteInformation.status}
         noteDue_Date={noteInformation.due_date}
-        noteCreated_at={noteInformation.created_at}
         setVisibilityUpdateForm={setVisibilityUpdateForm}
         visibilityUpdateForm={visibilityUpdateForm}
       />
