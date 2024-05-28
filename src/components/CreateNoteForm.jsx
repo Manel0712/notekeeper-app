@@ -2,7 +2,7 @@ import { validateEnum } from "../helpers/validation/validateEnum";
 import { validateNonEmpty } from "../helpers/validation/validateNonEmpty";
 import { validateType } from "../helpers/validation/validateType";
 import noteService from "../services/notes/noteService";
-import "../index.css"
+import "../index.css";
 export const CreateNoteForm = ({
   note,
   setNote,
