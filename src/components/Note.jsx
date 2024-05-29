@@ -1,11 +1,6 @@
 import { DeleteNoteButton } from "./DeleteNoteButton";
 import { UpdateNoteButton } from "./UpdateNoteButton";
-export const Note = ({
-  note,
-  setNote,
-  setVisibilityUpdateForm,
-  visibilityUpdateForm,
-}) => {
+export const Note = ({ note, setNote }) => {
   return note.map((noteInformation, i) => (
     <ul key={i}>
       <li>{noteInformation.name} </li>
@@ -16,15 +11,12 @@ export const Note = ({
       <li>{noteInformation.created_at}</li>
       <UpdateNoteButton
         setNote={setNote}
-        note={note}
         noteId={noteInformation.id}
         noteName={noteInformation.name}
         noteDescription={noteInformation.description}
         noteImportant={noteInformation.important}
         noteStatus={noteInformation.status}
         noteDue_Date={noteInformation.due_date}
-        setVisibilityUpdateForm={setVisibilityUpdateForm}
-        visibilityUpdateForm={visibilityUpdateForm}
       />
       <DeleteNoteButton
         noteId={noteInformation.id}

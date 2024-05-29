@@ -1,5 +1,5 @@
 import { NotesList, CreateNoteForm } from "./components";
-import { useVisibilityUpdateForm, useCreateForm, useNote } from "./hooks";
+import { useCreateForm, useNote } from "./hooks";
 
 function App() {
   const {
@@ -15,17 +15,10 @@ function App() {
     handleNewDue_DataValue,
   } = useCreateForm();
   const { note, handleNote } = useNote();
-  const { visibilityUpdateForm, handleVisibilityUpdateFormValue } =
-    useVisibilityUpdateForm();
   return (
     <>
       <h1>notekeeper-app</h1>
-      <NotesList
-        note={note}
-        setNote={handleNote}
-        setVisibilityUpdateForm={handleVisibilityUpdateFormValue}
-        visibilityUpdateForm={visibilityUpdateForm}
-      />
+      <NotesList note={note} setNote={handleNote} />
       <CreateNoteForm
         note={note}
         setNote={handleNote}
