@@ -13,7 +13,7 @@ export const useNote = () => {
   };
   useEffect(() => {
     getNote();
-  });
+  }, []);
   return {
     note,
     handleNote,
