@@ -1,9 +1,6 @@
 import { DeleteNoteButton } from "./DeleteNoteButton";
 import { UpdateNoteButton } from "./UpdateNoteButton";
-export const Note = ({
-  note,
-  setNote,
-}) => {
+export const Note = ({ note, setNote }) => {
   return note.map((noteInformation, i) => (
     <ul key={i}>
       <li>{noteInformation.name} </li>

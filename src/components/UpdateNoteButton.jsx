@@ -11,7 +11,7 @@ export const UpdateNoteButton = ({
   noteDue_Date,
 }) => {
   const { visibilityUpdateForm, handleVisibilityUpdateFormValue } =
-  useVisibilityUpdateForm();
+    useVisibilityUpdateForm();
   const handleUpdate = () => {
     handleVisibilityUpdateFormValue(true);
   };

@@ -56,9 +56,9 @@ export const UpdateNoteForm = ({
           editNote.due_date,
         )
         .then(() => {
-          noteService.getAll().then((data)=>{
-            setNote(data.notes)
-          })
+          noteService.getAll().then((data) => {
+            setNote(data.notes);
+          });
         })
         .finally(() => {
           visibilityUpdateForm(false);

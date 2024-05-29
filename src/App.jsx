@@ -18,10 +18,7 @@ function App() {
   return (
     <>
       <h1>notekeeper-app</h1>
-      <NotesList
-        note={note}
-        setNote={handleNote}
-      />
+      <NotesList note={note} setNote={handleNote} />
       <CreateNoteForm
         note={note}
         setNote={handleNote}
