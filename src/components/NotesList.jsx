@@ -2,8 +2,6 @@ import { Note } from "./Note";
 export const NotesList = ({
   note,
   setNote,
-  setVisibilityUpdateForm,
-  visibilityUpdateForm,
 }) => {
   return (
     <div>
@@ -11,8 +9,6 @@ export const NotesList = ({
         <Note
           note={note}
           setNote={setNote}
-          setVisibilityUpdateForm={setVisibilityUpdateForm}
-          visibilityUpdateForm={visibilityUpdateForm}
         />
       ) : (
         <p>Empty List</p>

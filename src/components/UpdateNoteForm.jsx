@@ -6,7 +6,6 @@ import { useUpdateForm } from "../hooks";
 import "../index.css";
 export const UpdateNoteForm = ({
   id,
-  note,
   setNote,
   noteName,
   noteDescription,
@@ -56,8 +55,10 @@ export const UpdateNoteForm = ({
           editNote.status,
           editNote.due_date,
         )
-        .then((data) => {
-          setNote([...note, data]);
+        .then(() => {
+          noteService.getAll().then((data)=>{
+            setNote(data.notes)
+          })
         })
         .finally(() => {
           visibilityUpdateForm(false);

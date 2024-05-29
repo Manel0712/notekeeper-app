@@ -1,19 +1,19 @@
 import { UpdateNoteForm } from "./UpdateNoteForm";
+import { useVisibilityUpdateForm } from "../hooks";
 
 export const UpdateNoteButton = ({
   setNote,
-  note,
   noteId,
   noteName,
   noteDescription,
   noteImportant,
   noteStatus,
   noteDue_Date,
-  setVisibilityUpdateForm,
-  visibilityUpdateForm,
 }) => {
+  const { visibilityUpdateForm, handleVisibilityUpdateFormValue } =
+  useVisibilityUpdateForm();
   const handleUpdate = () => {
-    setVisibilityUpdateForm(true);
+    handleVisibilityUpdateFormValue(true);
   };
 
   return (
@@ -24,14 +24,13 @@ export const UpdateNoteButton = ({
       {visibilityUpdateForm ? (
         <UpdateNoteForm
           id={noteId}
-          note={note}
           setNote={setNote}
           noteName={noteName}
           noteDescription={noteDescription}
           noteImportant={noteImportant}
           noteStatus={noteStatus}
           noteDue_Date={noteDue_Date}
-          visibilityUpdateForm={setVisibilityUpdateForm}
+          visibilityUpdateForm={handleVisibilityUpdateFormValue}
         />
       ) : (
         ""
